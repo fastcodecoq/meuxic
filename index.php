@@ -1,6 +1,7 @@
 <?php
 
   require(dirname(__FILE__) . "/assets/includes/api.php" );
+  require(dirname(__FILE__) . "/langs/lang.php" );
 
 ?>
 
@@ -34,14 +35,14 @@
   <br />
   <br />
   		<form method="post" name="search">
-   			<input type="text" name="query" placeholder="Search a song, artist or album" spellcheck="false"/>
+   			<input type="text" name="query" placeholder="<?php echo $lang["search_text"]; ?>" spellcheck="false"/>
    			<a href="#" data-action="submit" data-target="form[name='search']">
    				<i class='icon-seacrh'></i>
    			</a>
    		</form>
   <br /> 
   <br />
-  	<span  class="promo">Upload your songs, share them with the world, listen and play your life.</span>
+  	<span  class="promo"><?php echo $lang["promo_home"]; ?></span>
    <br />
    <br />
    <br />
@@ -59,7 +60,7 @@
    <div id="#uploader">
    </div>
 
-   <form name="uploader" method="post" action="javascript:void()" style="display:none">
+   <form name="uploader" method="post" action="javascript:void()" >
    			<label>Upload your songs</label> <br />
    			<input type="file" name="files" multiple />
    </form>

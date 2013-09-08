@@ -34,22 +34,25 @@
 	var holder = _this;
 
 	holder.ondragover = function () { 
+		
 		this.className = 'span5 hover';
 
-		$(holder).find("span.msg").html("Suelta los archivos <b><em>AQUÍ</em></b>");
+		alert("hey")
+
+		holder.find("span.msg").html("Drop Files here <b><em>AQUÍ</em></b>");
 
 		return false;
 	};
 
 	holder.ondragend = function () {
 		this.className = 'span5';
-		$(holder).find("span.ms").html("Arrastra los archivos hasta <b><em>AQUÍ</em></b>");
+		holder.find("span.ms").html("Drag files  <b><em>here</em></b>");
 		return false;
 	};
 
 	holder.ondragleave = function () {
 		this.className = 'span5';
-		$(holder).find("span.msg").html("Arrastra los archivos hasta <b><em>AQUÍ</em></b>");
+		holder.find("span.msg").html("Drag files <b><em>here</em></b>");
 
 		return false;
 	};	
@@ -59,8 +62,8 @@
 		e.preventDefault();
 		this.className = 'span5';
 		console.log(e);
-		$(holder).find("span.msg").html("Arrastra los archivos hasta <b><em>AQUÍ</em></b>");		
-		hideUpload();  
+		holder.find("span.msg").html("Arrastra los archivos hasta <b><em>AQUÍ</em></b>");		
+		//hideUpload();  
 		uploader.procFiles(e.dataTransfer.files);
 	};
 
@@ -70,9 +73,8 @@
 
     _this.find("input[type='file']:first").live('change', function(){
 				
-		
 		files = this.files;
-		hideUpload();  
+		//hideUpload();  
 		procFiles(files);
 
 
@@ -101,15 +103,15 @@
      	var ext = files[i].name.toString().split(".");     	    
      	    ext = ext[ ext.length - 1 ];
      	    ext = ext.toLowerCase();
-     	    exts = data.allowed_files_ext.join(" ");
+     	    _exts = data.allowed_files_ext.join(" ");
 
      	    console.log(ext);
 
-     	    if(!inArray(ext,exts))
+     	    if( $.inArray(ext,exts) != -1 )
      	    	if(files.length > 1)
      	    	 {
 
-     	    	  	var preg = confirm("Solo puedes cargar archivos con las extensiones " + exts + " Deseas omitir este archivo y continuar con la carga?");
+     	    	  	var preg = confirm("Solo puedes cargar archivos con las extensiones " + _exts + " Deseas omitir este archivo y continuar con la carga?");
 
      	    	  	if(!preg)
      	    	  		return;
@@ -117,7 +119,7 @@
      	    	 }
      	    	else{
      	    	 
-     	    	 alert("Solo puedes cargar archivos con las extensiones" + exts);
+     	    	 alert("Solo puedes cargar archivos con las extensiones" + _exts);
      	    	 return;
 
      	    	}
@@ -130,7 +132,7 @@
 
 	    console.log(filesData)
 			
-	    uploader.sendFiles(filesData);
+	    sendFiles(filesData);
 
  }
 
@@ -208,9 +210,7 @@
       },
 
 	success : function(r){
-
-
-				loadMedios();													
+															
 
 				console.log(r);
 
