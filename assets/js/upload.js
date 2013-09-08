@@ -5,7 +5,7 @@
 
   	  bar_text : ".percent",
   	  load_bar : "#upload_bar",
-  	  allowed_files_ext : new Array("mp3", "ogg", "wma"),
+  	  allowed_files_ext : new Array("mp3", "ogg"),
   	  upload_url : "/upload"
 
   }
@@ -31,28 +31,26 @@
     
     var drag_drop = function  ( ) {
 
-	var holder = _this;
+	var holder = document.querySelector("form[name='uploader']");
 
 	holder.ondragover = function () { 
 		
 		this.className = 'span5 hover';
 
-		alert("hey")
-
-		holder.find("span.msg").html("Drop Files here <b><em>AQUÍ</em></b>");
+		$(holder).find("span.msg").html("Drop Files <b><em>HERE</em></b>");
 
 		return false;
 	};
 
 	holder.ondragend = function () {
 		this.className = 'span5';
-		holder.find("span.ms").html("Drag files  <b><em>here</em></b>");
+		$(holder).find("span.ms").html("Drag files  <b><em>HERE</em></b>");
 		return false;
 	};
 
 	holder.ondragleave = function () {
 		this.className = 'span5';
-		holder.find("span.msg").html("Drag files <b><em>here</em></b>");
+		$(holder).find("span.msg").html("Drag files <b><em>HERE</em></b>");
 
 		return false;
 	};	
@@ -62,8 +60,7 @@
 		e.preventDefault();
 		this.className = 'span5';
 		console.log(e);
-		holder.find("span.msg").html("Arrastra los archivos hasta <b><em>AQUÍ</em></b>");		
-		//hideUpload();  
+		holder.find("span.msg").html("Drag files <b><em>HERE</em></b>");		 
 		uploader.procFiles(e.dataTransfer.files);
 	};
 
@@ -73,8 +70,7 @@
 
     _this.find("input[type='file']:first").live('change', function(){
 				
-		files = this.files;
-		//hideUpload();  
+		files = this.files;		
 		procFiles(files);
 
 
@@ -107,7 +103,7 @@
 
      	    console.log(ext);
 
-     	    if( $.inArray(ext,exts) != -1 )
+     	    if( jQuery.inArray(ext,exts) != -1 )
      	    	if(files.length > 1)
      	    	 {
 
@@ -153,7 +149,7 @@
 				contentType : false,
 				statusCode : {
 
-			 "404" : function(){ alert("pagina no encontrada"); }
+			   "404" : function(){ alert("pagina no encontrada"); }
 
 		        },
 				xhr: function(){

@@ -20,6 +20,7 @@ require_once("assets/js/jquery.js");
 
    	  render.home();
    	  $(data.form).upload();
+   	  listeners();
 
       console.log("meuxic esta iniciado");
 
@@ -34,6 +35,37 @@ require_once("assets/js/jquery.js");
    	  		  	$("body").css({ background : "url(assets/img/bg.jpg)", "background-size" : "cover"});
 
    	  	}
+
+   }
+
+
+
+   var listeners = function(){
+
+   	   $("*[data-action]").on("click", command);
+
+   }
+
+
+   var command = function(e){
+
+   	    e.stopPropagation();
+   	    e.preventDefault();
+
+   	    var command = $(this).attr("data-action");
+
+   	     switch(command){
+
+   	     	 case 'click':
+
+   	     	   var target = $(this).attr("data-target");
+
+   	     	   $(target).click();
+
+
+   	     	 break;
+
+   	     }
 
    }
 

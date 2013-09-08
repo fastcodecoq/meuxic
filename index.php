@@ -27,12 +27,21 @@
 
    	<div id="container">
 
-
+  <form name="uploader" method="post" action="javascript:void()" style="display:none">
+   			<input type="file" name="files" multiple />
+   </form>
    	
   <div class="logo">
    <h1><span style="font-size:1.5em">m</span>euxic</h1> 
   </div>
   <br />
+  <a href="#" data-action="click" data-target="input[name='files']" rel="nofollow" style="color: white;
+text-decoration: underline;
+display: block;
+width: 330px;
+margin: 0 auto;
+overflow: hidden;
+margin-top: -10px;"><?php echo $lang["upload_songs"]; ?></a>
   <br />
   		<form method="post" name="search">
    			<input type="text" name="query" placeholder="<?php echo $lang["search_text"]; ?>" spellcheck="false"/>
@@ -57,13 +66,10 @@
    <br />
    <br />
 
-   <div id="#uploader">
+   <div id="dropbox">
    </div>
 
-   <form name="uploader" method="post" action="javascript:void()" >
-   			<label>Upload your songs</label> <br />
-   			<input type="file" name="files" multiple />
-   </form>
+ 
   
    </div>
 

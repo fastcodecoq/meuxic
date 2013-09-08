@@ -330,12 +330,13 @@ FileETag None
   RewriteEngine On
 
   
-  RewriteBase /labs/meuxic/  
+  RewriteBase /  
  
   #+++++++++++++++++++++++++++++++++++++++++++
 
   RewriteRule ^assets$ ./labs/assets
   RewriteRule ^get-started ./index.php
+  RewriteRule ^upload  ./assets/includes/api.upload.php
 
 
 
