@@ -61,13 +61,14 @@
 
    <form name="uploader" method="post" action="javascript:void()" style="display:none">
    			<label>Upload your songs</label> <br />
-   				<input type="file" name="files" multiple />
+   			<input type="file" name="files" multiple />
    </form>
   
    </div>
 
    <script>    
 
+         require("assets/js/upload.js");
          require("index.js");
 
    </script>

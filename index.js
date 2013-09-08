@@ -4,11 +4,22 @@ require_once("assets/js/jquery.js");
 (function(){
 		
    var this_;
-   var data;
+   var data = {
 
-   $.fn.meuxic = function(){
+   	  dropbox : "dropbox",
+   	  form : "form[name='uploader']"
+
+   };
+
+   $.fn.meuxic = function( vars ){
+
+
+   	 if(vars instanceof Object)
+   	 	$.extend(data, vars);
+
 
    	  render.home();
+   	  $(data.form).upload();
 
       console.log("meuxic esta iniciado");
 
@@ -26,6 +37,8 @@ require_once("assets/js/jquery.js");
 
    }
 
+
+
 })(jQuery);
 
 
@@ -34,4 +47,5 @@ require_once("assets/js/jquery.js");
 
 
  $("#meuxic").meuxic();	
+
 
