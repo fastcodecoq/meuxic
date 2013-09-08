@@ -6,7 +6,7 @@
   	  bar_text : ".percent",
   	  load_bar : "#upload_bar",
   	  allowed_files_ext : new Array("mp3", "ogg"),
-  	  upload_url : "/upload"
+  	  upload_url : "assets/includes/api.upload.php"
 
   }
 
@@ -103,11 +103,11 @@
 
      	    console.log(ext);
 
-     	    if( jQuery.inArray(ext,exts) != -1 )
+     	    if(! inArray(ext,exts) )
      	    	if(files.length > 1)
      	    	 {
 
-     	    	  	var preg = confirm("Solo puedes cargar archivos con las extensiones " + _exts + " Deseas omitir este archivo y continuar con la carga?");
+     	    	  	var preg = confirm("Solo puedes cargar archivos con las extensiones " + _exts + ", Deseas omitir este archivo y continuar con la carga?");
 
      	    	  	if(!preg)
      	    	  		return;
@@ -115,7 +115,7 @@
      	    	 }
      	    	else{
      	    	 
-     	    	 alert("Solo puedes cargar archivos con las extensiones" + _exts);
+     	    	 alert("Solo puedes cargar archivos con las extensiones " + _exts);
      	    	 return;
 
      	    	}
