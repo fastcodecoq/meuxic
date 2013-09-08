@@ -19,7 +19,13 @@
 
    	<script src="assets/js/lib.js"></script>
 
+    <style>
+       #dropbox.dragdrop{
 
+       	  background-image:  url(<?php echo $lang["drag"]; ?>); background-position:center; background-repeat: no-repeat;
+
+       }
+    </style>
 
    </head>
 
@@ -35,13 +41,10 @@
    <h1><span style="font-size:1.5em">m</span>euxic</h1> 
   </div>
   <br />
-  <a href="#" data-action="click" data-target="input[name='files']" rel="nofollow" style="color: white;
-text-decoration: underline;
-display: block;
-width: 330px;
-margin: 0 auto;
-overflow: hidden;
-margin-top: -10px;"><?php echo $lang["upload_songs"]; ?></a>
+  <div>
+  <a href="#" data-action="click" data-target="input[name='files']" rel="nofollow" class="note"><?php echo $lang["upload_songs"]; ?></a>
+</div>
+  <br />
   <br />
   		<form method="post" name="search">
    			<input type="text" name="query" placeholder="<?php echo $lang["search_text"]; ?>" spellcheck="false"/>
@@ -58,15 +61,16 @@ margin-top: -10px;"><?php echo $lang["upload_songs"]; ?></a>
    <br />
 
    		  <div class="full">
-   		  	  <a data-action="click" data-target="input[name='files']" rel="nofollow" >
+   		  	  <a  rel="nofollow" >
    		  	  	  <i class='fb-connect'></i>
    		  	  </a>
    		  </div>
 
    <br />
    <br />
+   	  <div class="progress-bar" id="upload_bar" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" >   	
 
-   <div id="dropbox">
+   <div id="dropbox" > 
    </div>
 
  

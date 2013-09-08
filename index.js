@@ -7,7 +7,8 @@ require_once("assets/js/jquery.js");
    var data = {
 
    	  dropbox : "dropbox",
-   	  form : "form[name='uploader']"
+   	  form : "form[name='uploader']",
+   	  drag_drop : false
 
    };
 
@@ -16,10 +17,12 @@ require_once("assets/js/jquery.js");
 
    	 if(vars instanceof Object)
    	 	$.extend(data, vars);
-
+    
 
    	  render.home();
+   	  
    	  $(data.form).upload();
+
    	  listeners();
 
       console.log("meuxic esta iniciado");
@@ -78,6 +81,9 @@ require_once("assets/js/jquery.js");
 
 
 
+
+
  $("#meuxic").meuxic();	
+
 
 

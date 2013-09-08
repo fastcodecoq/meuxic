@@ -1,21 +1,28 @@
 @import url(http://fonts.googleapis.com/css?family=Aldrich);
 
+@font-face
+{
+
+font-family: akashi;
+src: url('../fonts/Akashi.ttf')
+
+}
 
 body{
 		
 background-color: #fd0065;
-background-image: url(assets/img/bg.jpg);
+
 background-repeat: no-repeat;
-background-size: cover;
 background: -moz-linear-gradient(left, #fd0065 0%, #f8b405 100%);
 background: -webkit-gradient(linear, left top, right top, color-stop(0%,#fd0065), color-stop(100%,#f8b405));
 background: -webkit-linear-gradient(left, #fd0065 0%,#f8b405 100%);
 background: -o-linear-gradient(left, #fd0065 0%,#f8b405 100%);
 background: -ms-linear-gradient(left, #fd0065 0%,#f8b405 100%);
 background: linear-gradient(to right, #fd0065 0%,#f8b405 100%);
+background: url(../img/bg.jpg) no-repeat;
+background-size: cover;
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd0065', endColorstr='#f8b405',GradientType=1 );
 
-position:absolute;
 top:0;
 left:0;
 width:100%;
@@ -24,9 +31,10 @@ min-height: 100%;
 
 }
 
+
 .sprite-login_fb{ background-position: 0 0;  } 
 .sprite-login_fb_active{ background-position: 0 -110px;  } 
-.sprite-login_fb_focus{ background-position: 0 -222px;  } 
+.sprite-login_fb_focus{ background-position: 0 -221.5px;  } 
 
 
 i.fb-connect{
@@ -64,7 +72,7 @@ left: 20%;
 margin: 0 auto;
 position: relative;
 padding: 1em;
-border: 1px solid #977E5D;
+border: 1px solid #A58A66;
 border-radius: 2em;
 box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 outline: none;
@@ -89,14 +97,16 @@ margin-top: -19px;
 display: block;
 text-align: center;
 
+
   }
 
   h1{
 
     text-align: center;
     color:yellow;
-    font-family: 'Aldrich', sans-serif;
+    font-family: 'akashi', sans-serif;
     font-size: 4em;
+    //margin-left: -12px;
 
   }
 
@@ -121,6 +131,98 @@ text-shadow: 0 -1px 1px hsl(24, 26%, 46%);
 	 }
 
 }
+
+
+a.note{
+	
+
+color: white;
+display: table;
+margin: 0 auto;
+overflow: hidden;
+margin-top: -25px;
+font-size: 1em;
+font-family: "Lucida grande", Verdana, sans-serif;
+
+}
+
+#upload_bar{
+
+
+	
+	height:5px;
+	width:0px;	
+	position:fixed;
+	top:0;
+	left:0;
+
+
+	&.bordered{
+
+	border-right:2px solid yellow;
+	 
+
+	}
+
+
+
+	}
+
+
+#dropbox{
+	
+	
+	position:fixed;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+    display:none;
+	background: rgba(0,0,0, .75);
+
+
+		 i{
+
+		  font-size: 6em;
+padding-bottom: 10px;
+color: #ccc;
+position: absolute;
+margin-top: -98px;
+margin-left: -42px;
+
+		 }
+
+
+	span{
+
+	background: yellow;
+padding: 12em 0;
+color: white;
+font-family: "Lucida grande", Verdana, sans-serif;
+font-size: 1.2em;
+text-align: center;
+width: 770px;
+height: 10%;
+margin: 0 auto;
+display: block;
+margin-top: 9%;
+line-height: 1;
+border-radius: 3px;
+padding: 12em 18em;
+border: 3px dashed white;
+background: #222;
+border-radius: 5%;
+overflow: hidden;
+
+
+
+
+	}
+
+
+
+}
+
 
 
 

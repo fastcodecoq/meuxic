@@ -334,10 +334,12 @@ FileETag None
  
   #+++++++++++++++++++++++++++++++++++++++++++
 
-  RewriteRule ^assets$ ./labs/assets
-  RewriteRule ^get-started ./index.php
-  RewriteRule ^upload  ./assets/includes/api.upload.php
 
+  RewriteRule ^get-started ./index.php
+  RewriteRule ^upload  ./assets/includes/api.files.php
+  RewriteRule ^json_files  ./assets/includes/api.files.php?q=get_all
+  RewriteRule ^stream/(.*)$  ./assets/includes/api.files.php?q=stream&id=$1
+  RewriteRule ^es  ./index.php?lang=es
 
 
 

@@ -2,7 +2,7 @@
 
 
 if(isset($_GET["lang"]) )
-  switch(str_to_lower($_GET["lang"])){
+  switch($_GET["lang"]){
 
 
     case "es":
