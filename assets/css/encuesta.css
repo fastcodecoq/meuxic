@@ -1,0 +1,126 @@
+#encuesta{
+
+	 width: 100%;
+            
+        }
+
+
+#preguntas{
+		
+	width: 100%;
+
+
+}   
+
+input[type="text"].small{
+
+	 font-size: 1em;
+	 padding: .4em;
+	 width: 250px;
+
+}
+
+.answer-wrap{
+
+	margin-left: 5em;
+	margin-top: 2em;
+	display: block;
+
+}    
+
+
+label.active{
+
+	color: rgb(51, 137, 229);
+
+}
+
+
+.section{
+
+	font-size: 1.8em;
+padding-top: 2em;
+display: block;
+border-top: 1px dashed #DFDFDF;
+letter-spacing: 1px;
+font-family: "Lucida grande", Tahoma, sans-serif !important;
+
+}
+
+.section div:first-child{
+
+	 float: left;
+
+}
+
+
+.section.no{
+
+	 padding-top: 0;
+	 border: 0;
+
+}
+
+
+.section .number{
+
+		border-radius: 50%;
+		padding: .5em;
+		background: #777;
+		color: white;
+		width: 26px;
+		height: 26px;
+		display: inline-block;
+		text-align: center;
+		line-height: 1;
+		font-weight: bold;
+		font-size: .9em;
+		margin-right: .5em;
+
+}
+
+
+.number.ok{
+
+	 background: #3DAD54;
+
+}
+
+.message{
+
+
+padding: 1em;
+margin: 2em 0;
+line-height: 2;
+position: relative;
+
+}
+
+
+.message.error{
+
+	 		background: rgb(255, 240, 240);
+
+}
+
+
+.message.success{
+
+	 		background: rgb(250, 249, 247);
+border: 1px solid #E7E7E7;
+border-top: 4px solid rgb(178, 223, 38);
+margin-top: -67px;
+
+}
+
+.message a.close{
+
+	  position: absolute;
+right: 1em;
+top: 0;
+text-decoration: none;
+font-size: 2em;
+color: #474747;
+
+
+}

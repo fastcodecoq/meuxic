@@ -1,0 +1,117 @@
+/*
+
+     btns.css
+    
+    Copyrights @gomosoft 2013
+
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+*/
+
+
+       .btn{
+
+            padding: 1em .7em;
+            font-size: 1.1em;
+            border: 0;
+            border: 1px solid #ccc;
+            color: white;
+            border-radius: 3px;
+            border-bottom: 2px solid #ccc;
+            letter-spacing: 1px;
+            background: rgb(241, 237, 231);
+            color: #646464;
+            text-decoration: none !important;
+            display: inline-block;
+            font-family: "Lucida grande", Helvetica, Arial, sans-serif;
+
+       }
+
+       .btn.white{
+
+         background: white;
+
+       }
+
+
+       .btn.blue{
+
+        background: rgb(42, 116, 209);
+        color:white;
+
+       }
+
+       .btn.red{
+
+        background: #FF3C3C;
+        color:white;
+
+       }
+
+       .btn.green{
+
+          background: #3DAD54;
+          color: #FFFFFF;
+
+        }
+
+       .btn.orange{
+
+          background: rgb(253, 146, 61);
+          color: white;
+
+       }       
+
+
+       .btn:hover{
+
+           box-shadow: inset 0 2px 14px rgba(255, 255, 255, 0.35);
+           cursor:pointer;
+
+       }
+
+
+       .btn:active{
+
+           box-shadow: inset 0 2px 1px rgba(0,0,0, .30);
+           border:1px solid rgba(0,0,0,.12);
+
+
+       }
+
+
+       .btn.block{
+
+         width: 100%;
+         display: block;
+         padding: 1em 0;
+         text-align: center;
+
+       }
+
+       .btn.small{
+
+         font-size: 1em;
+         padding: .6em .5em;
+
+        }
+
+        .btn.mini{
+
+          font-size: 1em;
+          padding: .2em .4em;
+
+        }
