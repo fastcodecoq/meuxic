@@ -239,11 +239,11 @@ if($_FILES)
       
      
       
-      echo json_encode(array("code" => "500", "errors" => $files->error()));
+      echo json_encode(array("http_code" => "202", "errors" => $files->error()));
       
 
     }else
-      echo json_encode(array("code" => "200", "files" => $ids));
+      echo json_encode(array("http_code" => "200", "files" => $ids));
 
 
 }
@@ -277,13 +277,16 @@ if($_GET){
 
         case 'del':
 
+            header("Content-type: application/json ; charset = utf-8");
+
+
             if($files->del($_GET["id"]))
-               echo "ok";
+         
+            echo json_encode(array("http_code" => "200", "files" => "OK"));                         
+
             else{
-               
-        header("Content-type: application/json ; charset = utf-8");
-                          
-        echo json_encode(array("code" => "500", "errors" => $files->error()));
+                                         
+            echo json_encode(array("code" => "202", "errors" => $files->error()));
                
                }
 
