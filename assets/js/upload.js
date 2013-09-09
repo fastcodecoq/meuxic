@@ -6,7 +6,8 @@
   	  bar_text : ".percent",
   	  load_bar : "#upload_bar",
   	  allowed_files_ext : new Array("mp3", "ogg"),
-  	  upload_url : "/assets/includes/api.upload.php", 
+  	  upload_url : "/upload", 
+  	  size_limit : "30000000",
   	  progress_action : function(percent){
     	
 
@@ -65,34 +66,40 @@
 	var holder = document.querySelector("form[name='uploader']");
 
 	holder.ondragover = function () { 
+		e.preventDefault();
+
 		
 		this.className = 'span5 hover';
 
 		$(holder).find("span.msg").html("Drop Files <b><em>HERE</em></b>");
 
-		return false;
+
 	};
 
 	holder.ondragend = function () {
+
+
 		this.className = 'span5';
 		$(holder).find("span.ms").html("Drag files  <b><em>HERE</em></b>");
-		return false;
+	
 	};
 
 	holder.ondragleave = function () {
+	
 		this.className = 'span5';
 		$(holder).find("span.msg").html("Drag files <b><em>HERE</em></b>");
 
-		return false;
+	
 	};	
-
 
 	holder.ondrop = function (e) {
 		e.preventDefault();
+		e.stopPropagation();
 		this.className = 'span5';
 		console.log(e);
 		holder.find("span.msg").html("Drag files <b><em>HERE</em></b>");		 
 		procFiles(e.dataTransfer.files);
+		return false;
 	};
 
 }
@@ -131,7 +138,7 @@
     body.ondragover = function(){
 
 
-    	$(dropbox).fadeIn();
+    	$(dropbox).show("fast");
     	$(dropbox).addClass("dragdrop");
 
     	return false;
@@ -158,7 +165,7 @@
 
     dropbox.ondragover = function(e){
 
-   		$(dropbox).fadeIn();
+   		$(dropbox).show("fast");
    		$(dropbox).addClass("dragdrop");
 
     	return false;
@@ -219,7 +226,8 @@
      	    ext = ext.toLowerCase();
      	    _exts = data.allowed_files_ext.join(" ");
 
-     	    console.log(ext);
+
+
 
      	    if(! inArray(ext,exts) )
      	    	if(files.length > 1)
@@ -237,6 +245,14 @@
      	    	 return;
 
      	    	}
+
+     	  if(files[i].size > data.size_limit)
+     	       {
+
+     	    	alert("Desafortunadamente tu archivo excede el peso máximo permitido por archivo, 8MB");
+     	    	return;
+
+     	       }
      	    else
      	         filesData.append(i,files[i]);    	       
 
