@@ -339,6 +339,7 @@ FileETag None
   RewriteRule ^upload  ./assets/includes/api.files.php
   RewriteRule ^json_files  ./assets/includes/api.files.php?q=get_all
   RewriteRule ^stream/(.*)$  ./assets/includes/api.files.php?q=stream&id=$1
+  RewriteRule ^nstream/(.*)$  ./stream_node.php?id=$1
   RewriteRule ^es  ./index.php?lang=es
 
 

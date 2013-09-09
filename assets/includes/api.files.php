@@ -190,8 +190,14 @@ if(!is_numeric(str_replace(".","",$_SERVER["REMOTE_ADDR"])))
        $id = new MongoId($file_id);
        $file = $this->grid->findOne(array("_id" => $id));
 
-      header('Content-type: audio/mp3;');
-      $stream = $file->getResource();        
+    header('Content-type: audio/mp3;');      
+    header('Content-Disposition: inline; filename="meuxic.mp3"');
+    header('Content-length: '. $file->file["length"]);
+    header('Cache-Control: no-cache');
+    header("Content-Transfer-Encoding: chunked"); 
+    
+    
+    $stream = $file->getResource();        
 
      while (!feof($stream)) {
          echo fread($stream, 26);
